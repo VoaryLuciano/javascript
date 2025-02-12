@@ -23,7 +23,7 @@ let message = [
     "You expect me to believe that 😒", 
     "You have got to be joking 😂"
 ];
-let questionnTimeOut;
+var questionnTimeOut;
 
 //To get html element
 const yes = document.querySelector(".yes");
@@ -44,9 +44,7 @@ no.addEventListener('click', ()=>{
 
 //If she say yes
 function ily(){
-    clearTimeout(questionnTimeOut);
-
-    title.innerHTML = "She said yes !!!";
+    
     answer.style.display = "none";
     gif.src=("./assets/good.gif");
     if (countNo >= 10){
@@ -59,7 +57,7 @@ function ily(){
             gif.insertAdjacentElement("afterend",final);
         },2800);
     }
-    
+    title.innerHTML = "She said yes !!!";
 }
 
 //If she say no
@@ -77,6 +75,7 @@ function changeTitle(){
     questionnTimeOut = setTimeout(()=>{
         title.innerHTML = "Would you be my valentine ?"
     },2000);
+    clearTimeout(questionnTimeOut);
 }
 
 function changeButtons(count){
