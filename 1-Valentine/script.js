@@ -116,7 +116,7 @@ function chase(){
 
 //Remove focus on button
 document.querySelector(".button").forEach((button) => {
-    button.addEventListener("touchend", (e) => {
+    button.addEventListener("touched", (e) => {
         e.target.blur();
     });
 });
