@@ -114,6 +114,13 @@ function chase(){
     yes.style.top = j + "px";
 }
 
+//Remove focus on button
+document.querySelector(".button").forEach((button) => {
+    button.addEventListener("touchend", (e) => {
+        e.target.blur();
+    });
+});
+
 
 
 
