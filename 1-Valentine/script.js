@@ -23,7 +23,7 @@ let message = [
     "You expect me to believe that 😒", 
     "You have got to be joking 😂"
 ];
-var questionnTimeOut;
+let questionTimeOut;
 
 //To get html element
 const yes = document.querySelector(".yes");
@@ -35,6 +35,7 @@ const answer = document.querySelector(".answer");
 //Get the response
 yes.addEventListener('click', ()=>{
     ily();
+    clearQuestionTimeout();
 })
 no.addEventListener('click', ()=>{
     badGirl();
@@ -44,7 +45,6 @@ no.addEventListener('click', ()=>{
 
 //If she say yes
 function ily(){
-    
     answer.style.display = "none";
     gif.src=("./assets/good.gif");
     if (countNo >= 10){
@@ -62,20 +62,29 @@ function ily(){
 
 //If she say no
 function badGirl(){
+    clearQuestionTimeout();
     gif.src=("./assets/bad.gif");
     changeTitle();
     changeButtons(countNo);
+    startQuestionTimeout();
 }
 
+
+//Timeout functions
+function startQuestionTimeout(){
+    questionTimeOut = setTimeout(()=>{
+        title.innerHTML = "Would you be my valentine ?"
+    },2000);
+}
+
+function clearQuestionTimeout(){
+    clearTimeout(questionTimeOut);
+}
 
 //Other functions
 function changeTitle(){
     let i = Math.floor(Math.random()*(19-0)+0);
     title.innerHTML = message[i];
-    questionnTimeOut = setTimeout(()=>{
-        title.innerHTML = "Would you be my valentine ?"
-    },2000);
-    clearTimeout(questionnTimeOut);
 }
 
 function changeButtons(count){
