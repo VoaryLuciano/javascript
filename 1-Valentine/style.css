@@ -45,10 +45,10 @@ body{
     transition: all cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
 }
 
-.button:hover, .button:active{
+/* .button:hover {
     position: relative;
     top : -0.5em;
-}
+} */
 
 .yes{
     background-color: var(--green);
@@ -66,5 +66,12 @@ img{
     aspect-ratio: 4/3;
     object-fit:contain;
     margin: 0 auto;
+}
+
+@media (hover:hover){
+    .button:hover{
+        position: relative;
+        top : -0.5em;
+    }
 }
 

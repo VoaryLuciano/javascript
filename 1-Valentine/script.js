@@ -114,17 +114,22 @@ function chase(){
     yes.style.top = j + "px";
 }
 
-//Remove focus on mobile
-const button = document.querySelector('.button');
-        button.addEventListener('touchstart', function() {
-            button.style.top = '-0.5em';
-        });
+//Remove active on mobile
+const button = document.querySelectorAll('.button');
 
-        button.addEventListener('touchend', function() {
-            button.style.top = '0';  //
-        });
-
-
+        button.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                element.style.position = 'relative';
+                element.style.transition = 'all cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s';
+                element.style.top = '-0.5em';
+            }); 
+            setTimeout(()=>{
+                element.addEventListener('touchend', function() {
+                    element.style.position = 'relative';
+                    element.style.top = '0';
+                });   
+            },500);
+        }); 
 
 
 
