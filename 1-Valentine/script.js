@@ -117,11 +117,11 @@ function chase(){
 //Remove focus on mobile
 const button = document.querySelector('.button');
         button.addEventListener('touchstart', function() {
-            button.style.top = '-2em';  // Move the button up on touchstart
+            button.style.top = '-0.5em';
         });
 
         button.addEventListener('touchend', function() {
-            button.style.top = '0';  // Reset the position when touch ends
+            button.style.top = '0';  //
         });
 
 
