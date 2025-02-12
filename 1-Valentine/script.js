@@ -95,8 +95,8 @@ function changeButtons(count){
 }
 
 function moveNo(){
-    let i = Math.floor(Math.random()*90);
-    let j = Math.floor(Math.random()*90);
+    let i = Math.floor(Math.random()*80);
+    let j = Math.floor(Math.random()*80);
     no.style.position = "absolute";
     no.style.left = i+"vw";
     no.style.top = j+"vh";
@@ -105,8 +105,8 @@ function moveNo(){
 function resize(element,value){
     let currentFontSize = getComputedStyle(element).fontSize;
     currentFontSize = parseInt(currentFontSize);
-
-    if(currentFontSize == 0 || currentFontSize == 7 || currentFontSize == 172) return;
+    
+    if(currentFontSize == 0 || currentFontSize <= 7 || currentFontSize >= 172) return;
     element.style.fontSize = `${currentFontSize - value}px`;
 }
 
@@ -128,15 +128,18 @@ const button = document.querySelectorAll('.button');
 
         button.forEach(element => {
             element.addEventListener('touchstart', function() {
-                element.style.position = 'relative';
-                element.style.transition = 'all cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s';
-                element.style.top = '-0.5em';
+                if (element.style.position != 'absolute') {
+                    element.style.position = 'relative';
+                    element.style.transition = 'all cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s';
+                    element.style.top = '-0.5em';
+                }
             }); 
             setTimeout(()=>{
-                element.addEventListener('touchend', function() {
-                    element.style.position = 'relative';
-                    element.style.top = '0';
-                });   
+                if (element.style.postion != 'absolute') {
+                    element.addEventListener('touchend', function() {
+                        element.style.top = '0';
+                    });   
+                }
             },500);
         }); 
 
