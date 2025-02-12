@@ -110,8 +110,8 @@ function chase(){
     i = parseInt(i);
     j = parseInt(j);
     yes.style.position = "absolute";
-    yes.style.left = i - Math.random()*i + "px";
-    yes.style.top = j - Math.random()*j + "px";
+    yes.style.left = i + "px";
+    yes.style.top = j + "px";
 }
 
 
