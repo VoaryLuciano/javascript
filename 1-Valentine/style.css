@@ -45,7 +45,7 @@ body{
     transition: all cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
 }
 
-.button:hover, .button:active, .button:focus-visible{
+.button:hover, .button:active{
     position: relative;
     top : -0.5em;
 }
