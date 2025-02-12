@@ -81,7 +81,7 @@ function changeTitle(){
 function changeButtons(count){
     if(count >= 2) moveNo();
     if (count >= 4) resize(no,5);
-    if (count >= 6) resize(yes,-20);
+    if (count >= 6) resize(yes,-10);
     if (count >= 10) chase();
 }
 

@@ -18,7 +18,7 @@ body{
 }
 
 .message{
-    font-size: 3rem;
+    font-size: clamp(1rem, calc(5vw + 0.1rem),3rem);
     font-weight: bold;
     margin: 1em 0;
     color: var(--text);
@@ -35,7 +35,7 @@ body{
 
 .button{
     background-color:#EB6565;
-    font-size: 2rem;
+    font-size: clamp(0.5rem, calc(5vw + 0.1rem),2rem);
     padding: 0.5em 1em;
     border-radius: 0.2em;
     color: var(--background);
@@ -62,10 +62,9 @@ body{
 /*image*/
 img{
     display: block;
-    width: 15em;
-    height: 15em;
+    width: clamp(100px,40vw, 15em);
     aspect-ratio: 4/3;
-    object-fit: cover;
+    object-fit:contain;
     margin: 0 auto;
 }
 
