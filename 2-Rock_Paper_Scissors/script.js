@@ -1,3 +1,5 @@
+alert("Check the console log");
+
 console.log("Rock Paper Scissors");
 
 function getComputerChoice(){
@@ -10,7 +12,7 @@ function getHumanChoice(){
     let answer = null;
 
     do {
-     answer = prompt('Make your choice : ');  
+     answer = prompt('Make your choice (rock, paper, scissors): ');  
      answer = answer.toLowerCase();          
     } while ( answer !== 'rock' && answer !== 'paper' && answer !== 'scissors');
 
